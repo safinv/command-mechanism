@@ -34,7 +34,7 @@ namespace CommandMechanism.Base
                 var commandHandler = ResolveCommandHandler<TCommand>();
                 var context = new CommandContext(this);
 
-                await commandHandler.Handle(command, context).ConfigureAwait(false);
+                await commandHandler.Handle(command, context);
 
                 RemovingCommandFromListOfRunningCommands(command);
             }

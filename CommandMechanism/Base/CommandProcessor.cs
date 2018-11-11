@@ -20,7 +20,7 @@ namespace CommandMechanism.Base
             {
                 try
                 {
-                    await _commandExecutor.Execute(command).ConfigureAwait(false);
+                    await _commandExecutor.Execute(command);
 
                     scope.Complete();
                 }

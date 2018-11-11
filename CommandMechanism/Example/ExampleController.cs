@@ -16,13 +16,13 @@ namespace CommandMechanism.Example
         }
 
         [HttpGet]
-        public void ExampleGetMethod()
+        public async void ExampleGetMethod()
         {
             var processor = _commandProcessorFactory.GetCommandProcessor();
 
             var exampleCommand = new ExampleCommand();
 
-            processor.Process(exampleCommand);
+            await processor.Process(exampleCommand);
         }
     }
 }
